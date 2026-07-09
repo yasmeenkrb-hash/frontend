@@ -1,0 +1,69 @@
+< <!DOCTYPE html>
+<html>
+<head>
+<title>Guess The Number</title>
+<style>
+  body{
+    font-family: Arial;
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+  }
+  .box{
+    background:#fff;
+    padding:20px;
+    width:280px;
+    text-align:center;
+    border-radius:8px;
+    box-shadow:0 0 10px #aaa;
+  }
+  input{
+    width:100%;
+    padding:8px;
+    margin:10px 0;
+    font-size:16px;
+  }
+  button{
+    padding:8px 15px;
+    font-size:16px;
+    cursor:pointer;
+  }
+  p{
+    margin-top:10px;
+    font-weight:bold;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h3>Guess the Number (1–10)</h3>
+  <input type="number" id="guess" placeholder="Enter number">
+  <button onclick="check()">Check</button>
+  <p id="msg"></p>
+</div>
+
+<script>
+  let number = Math.floor(Math.random()*10)+1;
+
+  function check(){
+    let g = document.getElementById("guess").value;
+    let msg = document.getElementById("msg");
+
+    if(g == number){
+      msg.innerHTML = "🎉 Correct! You guessed it.";
+    }
+    else if(g > number){
+      msg.innerHTML = "Too High!";
+    }
+    else{
+      msg.innerHTML = "Too Low!";
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Animated To-Do App</title>
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo {
+  background: white;
+  width: 350px;
+  padding: 25px;
+  border-radius: 15px;
+  animation: zoom 0.6s ease;
+}
+
+@keyframes zoom {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+h2 {
+  text-align: center;
+  color: #764ba2;
+}
+
+.input-box {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+button {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background: #f3f3f3;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slide 0.4s ease;
+}
+
+@keyframes slide {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+li.done {
+  background: #c8f7c5;
+  text-decoration: line-through;
+  color: #555;
+}
+
+.delete {
+  background: #ff5c5c;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="todo">
+  <h2>✨ To-Do List</h2>
+
+  <div class="input-box">
+    <input id="task" placeholder="Enter task">
+    <button onclick="addTask()">Add</button>
+  </div>
+
+  <ul id="list"></ul>
+</div>
+
+<script>
+function addTask() {
+  const input = document.getElementById("task");
+  if (input.value.trim() === "") return;
+
+  const li = document.createElement("li");
+  li.innerHTML = `
+    <span onclick="this.parentElement.classList.toggle('done')">
+      ${input.value}
+    </span>
+    <button class="delete" onclick="this.parentElement.remove()">✖</button>
+  `;
+
+  document.getElementById("list").appendChild(li);
+  input.value = "";
+}
+</script>
+
+</body>
+</html>

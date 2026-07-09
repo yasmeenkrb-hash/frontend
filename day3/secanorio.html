@@ -1,0 +1,204 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechLearn Landing Page</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body{
+        background:#f4f4f4;
+    }
+
+    /* Navbar */
+    .navbar{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        background:#333;
+        color:white;
+        padding:15px 30px;
+    }
+
+    .logo{
+        font-size:24px;
+        font-weight:bold;
+    }
+
+    .nav-links{
+        display:flex;
+        list-style:none;
+        gap:20px;
+    }
+
+    .nav-links a{
+        color:white;
+        text-decoration:none;
+        font-weight:bold;
+    }
+
+    .nav-links a:hover{
+        color:#00bcd4;
+    }
+
+    /* Hero Section */
+    .hero{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        height:80vh;
+        background:linear-gradient(to right, #2196f3, #00bcd4);
+        color:white;
+        flex-direction:column;
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:48px;
+        margin-bottom:15px;
+    }
+
+    .hero p{
+        font-size:20px;
+        margin-bottom:20px;
+    }
+
+    .btn{
+        padding:12px 25px;
+        background:white;
+        color:#2196f3;
+        border:none;
+        border-radius:5px;
+        cursor:pointer;
+        font-size:16px;
+        font-weight:bold;
+    }
+
+    .btn:hover{
+        background:#f1f1f1;
+    }
+
+    /* Features Section */
+    .features{
+        padding:50px 20px;
+    }
+
+    .features h2{
+        text-align:center;
+        margin-bottom:30px;
+    }
+
+    .feature-grid{
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);
+        gap:20px;
+    }
+
+    .card{
+        background:rgb(221, 187, 187);
+        padding:30px;
+        border:2px solid #ddd;
+        text-align:center;
+        border-radius:10px;
+        transition:0.3s;
+    }
+
+    .card:hover{
+        transform:translateY(-8px);
+        box-shadow:0 4px 15px rgba(181, 177, 177, 0.2);
+    }
+
+    /* Footer */
+    footer{
+        background:#d0cfcf;
+        color:white;
+        text-align:center;
+        padding:15px;
+        margin-top:30px;
+    }
+
+    /* Responsive Design */
+    @media (max-width:768px){
+
+        .navbar{
+            flex-direction:column;
+            gap:15px;
+        }
+
+        .nav-links{
+            flex-direction:column;
+            text-align:center;
+        }
+
+        .feature-grid{
+            grid-template-columns:1fr;
+        }
+
+        .hero h1{
+            font-size:35px;
+        }
+
+        .hero p{
+            font-size:18px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">TechLearn</div>
+
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Learn Web Development</h1>
+        <p>Master HTML, CSS and JavaScript.</p>
+        <button class="btn">Get Started</button>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Our Courses</h2>
+
+        <div class="feature-grid">
+            <div class="card">
+                <h3>HTML</h3>
+                <p>Learn the structure of web pages.</p>
+            </div>
+
+            <div class="card">
+                <h3>CSS</h3>
+                <p>Style websites with modern designs.</p>
+            </div>
+
+            <div class="card">
+                <h3>JavaScript</h3>
+                <p>Add interactivity and dynamic features.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 TechLearn</p>
+    </footer>
+
+</body>
+</html>
