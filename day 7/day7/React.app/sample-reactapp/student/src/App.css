@@ -1,0 +1,105 @@
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #141e30, #243b55);
+  min-height: 100vh;
+}
+
+.calculator-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  width: 340px;
+  padding: 25px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.title {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.display {
+  width: 100%;
+  height: 70px;
+  border: none;
+  outline: none;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 1.8rem;
+  text-align: right;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+button {
+  height: 60px;
+  border: none;
+  border-radius: 18px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.operator {
+  background: rgba(255, 159, 67, 0.85);
+}
+
+.operator:hover {
+  background: rgba(255, 159, 67, 1);
+}
+
+.special {
+  background: rgba(255, 99, 132, 0.85);
+}
+
+.special:hover {
+  background: rgba(255, 99, 132, 1);
+}
+
+.equal {
+  background: rgba(72, 219, 251, 0.85);
+  grid-row: span 2;
+  height: 135px;
+}
+
+.equal:hover {
+  background: rgba(72, 219, 251, 1);
+}
+
+.zero {
+  grid-column: span 3;
+}
